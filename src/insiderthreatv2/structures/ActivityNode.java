@@ -5,10 +5,19 @@
  */
 package insiderthreatv2.structures;
 
+import insiderthreatv2.entries.ActivityEntry;
+
 /**
  *
  * @author eric
  */
 public class ActivityNode {
+    ActivityNode(ActivityNode activityNode) {
+        
+    }
     
+    public boolean contains(ActivityEntry key){
+        return false;
+    }
+
 }

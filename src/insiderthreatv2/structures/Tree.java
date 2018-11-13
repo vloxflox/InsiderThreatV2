@@ -15,10 +15,10 @@ import java.io.IOException;
 
 public class Tree {
     
-    private UserNode root;
+    private RootNode root;
     
     public Tree(){
-        root = new UserNode(null);
+        root = new RootNode(null);
         
         initializeUsers("../r1/LDAP/2010-04.csv");
         
@@ -68,8 +68,8 @@ public class Tree {
     }
     
     private void searchEntry(ActivityEntry activityEntry){
-        UserNode node = root.findSon(activityEntry);
-        node.show();
+        UserNode userNode = root.findSon(activityEntry);
+        userNode.show();
     }
     
     
