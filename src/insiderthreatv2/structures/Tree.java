@@ -6,6 +6,7 @@ package insiderthreatv2.structures;
 
 import insiderthreatv2.entries.Entry;
 import insiderthreatv2.entries.ActivityEntry;
+import insiderthreatv2.entries.DeviceEntry;
 import insiderthreatv2.entries.UserEntry;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -23,7 +24,7 @@ public class Tree {
         initializeUsers("../r1/LDAP/2010-04.csv");
         
         ActivityEntry key;
-        key = new ActivityEntry("{F1C5-I5CN19JK-9863ZHWX}","01/04/2010 13:45:58","DTAA/QGM0222","PC-1214","http://espn.go.com");
+        key = new DeviceEntry("{F1C5-I5CN19JK-9863ZHWX}","01/04/2010 13:45:58","DTAA/QGM0222","PC-1214","http://espn.go.com");
         
         searchEntry(key);
     }

@@ -5,7 +5,7 @@
  */
 package insiderthreatv2.entries;
 
-public class ActivityEntry extends Entry{
+public abstract class ActivityEntry extends Entry{
 
     private String id;
     private String date;
