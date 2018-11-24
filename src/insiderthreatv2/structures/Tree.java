@@ -4,8 +4,8 @@
  */
 package insiderthreatv2.structures;
 
-import insiderthreatv2.entries.ActivityEntry;
 import insiderthreatv2.entries.Entry;
+import insiderthreatv2.entries.ActivityEntry;
 import insiderthreatv2.entries.UserEntry;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

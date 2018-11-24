@@ -9,7 +9,7 @@ public class DateEntry extends Entry{
 
     private String date;
     
-    public DateEntry(String id){
+    public DateEntry(String date){
         this.date = date;
     }
 
