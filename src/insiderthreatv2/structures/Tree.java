@@ -7,6 +7,8 @@ package insiderthreatv2.structures;
 import insiderthreatv2.entries.Entry;
 import insiderthreatv2.entries.ActivityEntry;
 import insiderthreatv2.entries.DeviceEntry;
+import insiderthreatv2.entries.HttpEntry;
+import insiderthreatv2.entries.LogonEntry;
 import insiderthreatv2.entries.UserEntry;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -24,7 +26,7 @@ public class Tree {
         initializeUsers("../r1/LDAP/2010-04.csv");
         
         ActivityEntry key;
-        key = new DeviceEntry("{F1C5-I5CN19JK-9863ZHWX}","01/04/2010 13:45:58","DTAA/QGM0222","PC-1214","http://espn.go.com");
+        key = new LogonEntry("{Q8D8-W9AS61AT-5411NKYP}","01/04/2010 04:08:42","DTAA/CRC0996","PC-3916","Logon");
         
         searchEntry(key);
     }
@@ -69,6 +71,16 @@ public class Tree {
     }
     
     private void searchEntry(ActivityEntry activityEntry){
+        if( activityEntry instanceof DeviceEntry) {
+            System.out.println("device search");
+        }
+        if( activityEntry instanceof HttpEntry) {
+            System.out.println("http search");
+        }
+        if( activityEntry instanceof LogonEntry) {
+            System.out.println("logon search");
+        }
+        
         UserNode userNode = root.findSon(activityEntry);
         userNode.show();
     }
