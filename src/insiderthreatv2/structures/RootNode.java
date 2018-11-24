@@ -20,8 +20,8 @@ public class RootNode{
         child = new ArrayList<UserNode>();
     }
 
-    public void addChild(UserEntry userEntry){
-        UserNode node = new UserNode(userEntry);
+    public void addChild(UserEntry userEntry, String currentDate){
+        UserNode node = new UserNode(userEntry, currentDate);
         child.add(node);
     }
 

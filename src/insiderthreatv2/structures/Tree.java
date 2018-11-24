@@ -23,7 +23,7 @@ public class Tree {
     public Tree(){
         root = new RootNode(null);
         
-        initializeUsers("../r1/LDAP/2010-04.csv");
+        initializeUsers("../r1/LDAP/2010-04.csv", "01/04/2010");
         
         ActivityEntry key;
         key = new LogonEntry("{Q8D8-W9AS61AT-5411NKYP}","01/04/2010 04:08:42","DTAA/CRC0996","PC-3916","Logon");
@@ -31,7 +31,7 @@ public class Tree {
         searchEntry(key);
     }
     
-    private void initializeUsers(String csvFile) {
+    private void initializeUsers(String csvFile, String currentDate) {
 
         
         BufferedReader br = null;
@@ -50,7 +50,7 @@ public class Tree {
                 
                 userEntry = new UserEntry(logEntry[0] , logEntry[1] , logEntry[2] , logEntry[3] , logEntry[4]);
 
-                root.addChild(userEntry);
+                root.addChild(userEntry, currentDate);
 
             }
             

@@ -18,11 +18,11 @@ public class UserNode{
     protected UserEntry userEntry;
     protected List<DateNode> child; 
     
-    public UserNode(UserEntry userEntry){
+    public UserNode(UserEntry userEntry, String currentDate){
         this.userEntry = userEntry;
         child = new ArrayList<DateNode>();
         
-        addChild(new DateEntry("01/04/2010"));
+        addChild(new DateEntry(currentDate));
     }
 
     public void addChild(DateEntry dateEntry){
