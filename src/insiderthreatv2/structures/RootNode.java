@@ -12,8 +12,10 @@ import java.util.ArrayList;
  * @author eric
  */
 
+//nó que armazena todos os usuários
 public class RootNode{
 
+    
     protected List<UserNode> child; 
     
     public RootNode(UserEntry userEntry){

@@ -13,6 +13,7 @@ import java.util.Iterator;
  * @author eric
  */
 
+//nó representando o perfil de cada usuário (nível 1)
 public class UserNode{
 
     protected UserEntry userEntry;

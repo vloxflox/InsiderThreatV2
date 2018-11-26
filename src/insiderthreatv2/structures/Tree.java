@@ -16,6 +16,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
+//estrutura que gerencia usuários
 public class Tree {
     
     private RootNode root;

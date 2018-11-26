@@ -12,18 +12,19 @@ import java.util.ArrayList;
  * @author eric
  */
 
+//data das observações (nível 2)
 public class DateNode{
 
     protected DateEntry dateEntry;
-    protected List<ActivityNode> child; 
+    protected List<PcNode> child; 
     
     public DateNode(DateEntry dateEntry){
         this.dateEntry = dateEntry;
-        child = new ArrayList<ActivityNode>();
+        child = new ArrayList<PcNode>();
     }
 
-    public void addChild(ActivityNode activityNode){
-        ActivityNode node = new ActivityNode(activityNode);
+    public void addChild(ActivityEntry activityNode){
+        PcNode node = new PcNode(activityNode);
         child.add(node);
     }
 
@@ -32,8 +33,8 @@ public class DateNode{
     }
 
 
-    public ActivityNode findSon(ActivityEntry key){
-        for (ActivityNode current : child) {
+    public PcNode findSon(ActivityEntry key){
+        for (PcNode current : child) {
             if (current.contains(key)) {
                 return current;
             }
