@@ -71,19 +71,22 @@ public class Tree {
 
     }
     
-    private void searchEntry(ActivityEntry activityEntry){
-        if( activityEntry instanceof DeviceEntry) {
-            System.out.println("device search");
-        }
-        if( activityEntry instanceof HttpEntry) {
-            System.out.println("http search");
-        }
-        if( activityEntry instanceof LogonEntry) {
-            System.out.println("logon search");
-        }
-        
+    private void searchEntry(ActivityEntry activityEntry){       
         UserNode userNode = root.findSon(activityEntry);
-        userNode.show();
+        if(userNode!=null){
+            userNode.show();
+        }else{
+            System.out.println("Entrada não correspondente a nenhum valor armazenado");
+        }
+    }
+    
+    private void searchId(String id){
+        UserNode userNode = root.findId(id);
+        if(userNode!=null){
+            userNode.show();
+        }else{
+            System.out.println("Id não correspondente ao de nenhum funcionário cadastrado");
+        }
     }
     
     

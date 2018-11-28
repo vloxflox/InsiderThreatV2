@@ -22,9 +22,9 @@ public class PcNode {
     
     //IMPLEMENTAR HISTOGRAMA AQUI
     String id;
-    protected List<HttpEntry>   httpEntry;
-    protected List<LogonEntry>  logonEntry;
-    protected List<DeviceEntry> deviceEntry;
+    protected List<HttpEntry>   httpChilds;
+    protected List<LogonEntry>  logonChilds;
+    protected List<DeviceEntry> deviceChilds;
     
     //recebe uma entry e adiciona ao registro
     PcNode(ActivityEntry activityEntry) {
@@ -36,15 +36,15 @@ public class PcNode {
     public void addChild(ActivityEntry activityEntry){
         
         if( activityEntry instanceof DeviceEntry) {
-            System.out.println("device search");
+            deviceChilds.add( (DeviceEntry)activityEntry);
             return;
         }
         if( activityEntry instanceof HttpEntry) {
-            System.out.println("http search");
+            httpChilds.add( (HttpEntry)activityEntry);
             return;
         }
         if( activityEntry instanceof LogonEntry) {
-            System.out.println("logon search");
+            logonChilds.add( (LogonEntry)activityEntry);
             return;
         }
     }

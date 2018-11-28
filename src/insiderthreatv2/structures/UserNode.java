@@ -44,6 +44,10 @@ public class UserNode{
         }
         return null;
     }
+    
+    public boolean checkId(String id){
+        return userEntry.getUser_id().equals(id);
+    }
 
 
     public void show(){

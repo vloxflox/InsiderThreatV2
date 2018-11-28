@@ -36,4 +36,13 @@ public class RootNode{
         return null;
     }
     
+    public UserNode findId(String id){
+        for (UserNode current : child) {
+            if (current.checkId(id)) {
+                return current;
+            }
+        }
+        return null;
+    }
+    
 }
