@@ -27,12 +27,12 @@ public class Tree {
         
         initializeUsers("../r1/LDAP/2010-04.csv", "01/04/2010");
         
-        ActivityEntry key;
-        key = new LogonEntry("{Q8D8-W9AS61AT-5411NKYP}","01/04/2010 04:08:42","DTAA/CRC0996","PC-3916","Logon");
+        //ActivityEntry key;
+        //key = new LogonEntry("{Q8D8-W9AS61AT-5411NKYP}","01/04/2010 04:08:42","DTAA/CRC0996","PC-3916","Logon");
         
-        searchEntry(key);
+        //searchEntry(key);
         
-        //userInterface();
+        userInterface();
     }
     
     private void initializeUsers(String csvFile, String currentDate) {
@@ -55,6 +55,47 @@ public class Tree {
                 userEntry = new UserEntry(logEntry[0] , logEntry[1] , logEntry[2] , logEntry[3] , logEntry[4]);
 
                 root.addChild(userEntry, currentDate);
+
+            }
+            
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
+    
+    private void initializeHttp(String csvFile) {
+
+        
+        BufferedReader br = null;
+        String line = "";
+        String cvsSplitBy = ",";
+        UserEntry userEntry;
+
+
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            while ((line = br.readLine()) != null) {
+
+                ActivityEntry activityEntry;
+                UserNode user;
+                // use comma as separator
+                String[] logEntry = line.split(cvsSplitBy);    
+                
+                activityEntry = new HttpEntry(logEntry[0] , logEntry[1] , logEntry[2] , logEntry[3] , logEntry[4]);
+
+                user = root.findSon(activityEntry);
 
             }
             

@@ -23,11 +23,13 @@ public class DateNode{
         child = new ArrayList<PcNode>();
     }
 
+    //adiciona devices
     public void addChild(ActivityEntry activityNode){
         PcNode node = new PcNode(activityNode);
         child.add(node);
     }
 
+    //avisa se existe 
     public boolean contains(ActivityEntry key){
         return dateEntry.contains(key);
     }

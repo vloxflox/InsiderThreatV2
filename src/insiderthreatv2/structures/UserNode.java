@@ -35,7 +35,7 @@ public class UserNode{
         return userEntry.contains(key);
     }
 
-
+    //TODO: resolver a data de armazenamento
     public DateNode findSon(ActivityEntry key){
         for (DateNode current : child) {
             if (current.contains(key)) {
