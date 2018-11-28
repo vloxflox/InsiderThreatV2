@@ -4,6 +4,7 @@
  */
 package insiderthreatv2.structures;
 
+import java.util.Scanner;
 import insiderthreatv2.entries.Entry;
 import insiderthreatv2.entries.ActivityEntry;
 import insiderthreatv2.entries.DeviceEntry;
@@ -30,6 +31,8 @@ public class Tree {
         key = new LogonEntry("{Q8D8-W9AS61AT-5411NKYP}","01/04/2010 04:08:42","DTAA/CRC0996","PC-3916","Logon");
         
         searchEntry(key);
+        
+        //userInterface();
     }
     
     private void initializeUsers(String csvFile, String currentDate) {
@@ -86,6 +89,24 @@ public class Tree {
             userNode.show();
         }else{
             System.out.println("Id não correspondente ao de nenhum funcionário cadastrado");
+        }
+    }
+    
+    private void userInterface(){
+        boolean isRunning = true;
+        Scanner scanner;
+        scanner = new Scanner(System.in); 
+        String userId;
+        
+        while (isRunning){             
+            System.out.println("Digite o ID do usuário que deseja visualizar, e 0 para finalizar a busca");
+            userId = scanner.nextLine();
+            if(!userId.equals("0")){
+                searchId(userId);
+            }else{
+                isRunning = false;
+            }
+            
         }
     }
     
